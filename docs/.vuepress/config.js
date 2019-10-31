@@ -33,7 +33,7 @@ module.exports = {
     pagination: '5', //每一页显示的文章个数
     avatar: '/logo.jpg', //头像地址
     brand: '/brand.jpg', //头像背景图片地址
-    github: 'https://gitee.com/chen2114/projects', //点击github跳转的地址
+    github: 'https://gitee.com/chen2114', //点击github跳转的地址
     vssue: {
       //评论的配置,
       need: false, //是否需要评论
