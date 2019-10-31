@@ -3,6 +3,35 @@ title: 【学习笔记】之css
 tags: [学习笔记, css]
 categories: [学习笔记]
 ---
+### 初始化
+  ``` css
+  @charset "utf-8";
+  /* CSS Document */
+  html,body{height: 100%;}
+  html,body,div,form,img,ul,ol,li,dl,dt,dd{margin:0px; padding:0px;}
+  body{margin:0 auto;padding:0;border:0; font-family:"微软雅黑"; font-size: 14px;}
+  select,input,textarea{vertical-align:middle; padding:0; margin:0;}
+  textarea{resize:none;}
+  img{border:0;}
+  ol,ul,li{list-style:none;}
+  a{text-decoration:none; transition: ease-in-out .3s;}
+  a,img,input,textarea,select,button,area{outline:none;}
+  *{-webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+            box-sizing: border-box;}
+  /*清除浮动*/
+  .clearfix:after{content:'';display:block;height:0;clear:both;visibility:hidden;}
+  .clearfix{*zoom:1; _zoom:1;}
+  .lfloat{float:left;}
+  .rfloat{float:right;}
+  table{border-collapse:collapse;border-spacing:0;}
+  td,th{padding:0;}
+
+  body{position: relative; width: 100%; height: 100%;}
+
+  /*修改IE下  select*/
+  select::-ms-expand{display: none; appearance:none; -moz-appearance:none; -webkit-appearance:none; -ms-appearance:none;}
+  ```
 ### 鼠标悬停翻转X 翻转Y 旋转翻转X
   ``` css
   .flip-x {transition: .6s ease-in-out;}

@@ -27,8 +27,8 @@ categories: [学习笔记]
 ### 关联一个远程仓库
     git remote add origin 远程仓库地址
 ### 免密提交
-	在git文件夹的config配置文件修改url
-	url = https://gitee.com/chen2114/studyNotes.git
-	改成:
-	url = https://账号:密码@gitee.com/chen2114/studyNotes.git
-	url = https://13655079137:cwb073344520@gitee.com/chen2114/studyNotes.git
+  	在git文件夹的config配置文件修改url
+  	url = https://gitee.com/chen2114/studyNotes.git
+  	改成:
+  	url = https://账号:密码@gitee.com/chen2114/studyNotes.git
+  	url = https://13655079137:cwb073344520@gitee.com/chen2114/studyNotes.git
