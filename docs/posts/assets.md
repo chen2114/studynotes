@@ -24,7 +24,7 @@ categories: [资源]
   > 生成随机数据，拦截 Ajax 请求
 ### [vue Router](https://router.vuejs.org/zh/guide/#javascript)
   > 是Vue.js 官方的路由管理器
-### [QRCode](https://www.npmjs.com/package/qrcodejs2)
+### [QRCode](https://www.jianshu.com/p/d3883e020d99)
   > 用于制作二维码
 ## 其它
 ### [iconfont](https://www.iconfont.cn/)
