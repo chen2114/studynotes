@@ -22,6 +22,8 @@ categories: [资源]
   > 一致性、模块化、高性能的 JavaScript 实用工具库
 ### [mock](http://mockjs.com/)
   > 生成随机数据，拦截 Ajax 请求
+### [axios](http://www.axios-js.com/zh-cn/docs/)
+  > Axios 是一个基于 promise 的 HTTP 库，可以用在浏览器和 node.js 中。
 ### [vue Router](https://router.vuejs.org/zh/guide/#javascript)
   > 是Vue.js 官方的路由管理器
 ### [QRCode](https://www.jianshu.com/p/d3883e020d99)
