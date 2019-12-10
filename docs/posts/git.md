@@ -108,6 +108,7 @@ Git是如何跟踪修改的，每次修改，如果不用git add到暂存区，�
 
 #### 从远程克隆
     $ git clone https://github.com/usern/repositoryname.git
+    $ git clone -b 分支名 仓库地址
 <strong>注意:</strong>当你不能使用`git@github.com`命令来进行推送和克隆，是因为没有安装密钥。添加私秘钥到`$ ssh-add ~/.ssh/id_rsa`<br>
 如果添加失败可以先执行命令<code>$ eval \`ssh-agent\`</code> \`是～键上的那个符号，然后再次添加私秘钥。<br>
 用`$ ssh -T git@github.com`判断是否绑定成功。如果返回`successfully`表示成功。
