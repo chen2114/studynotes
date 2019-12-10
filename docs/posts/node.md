@@ -194,7 +194,7 @@ console.log(obj)
 
     $ mongod
 
-  `mongodb`默认数据存储在 C 盘中的 data => bin 文件夹下
+  `mongodb`默认数据存储在 C 盘中的 data => bin 文件夹下，所以需在 C 盘下启动
 #### 安装
     $ npm install mongoose
 #### 连接
