@@ -189,7 +189,7 @@ console.log(obj)
   {{ /block }}
   ```
 ### Node.js 连接 MongoDB
-#### 开启服务器
+#### 开启数据库
   打开控制台输入命令
 
     $ mongod

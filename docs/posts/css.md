@@ -154,7 +154,7 @@ categories: [学习笔记]
   ```
 ### CSS三角形
   ``` css
-  {border-width: 6px;border-style: solid; border-color: transparent transparent#fff transparent;}
+  {border-width: 6px;border-style: solid; border-color: transparent transparent #fff transparent;}
   ```
 ### pie.htc
   ``` css
