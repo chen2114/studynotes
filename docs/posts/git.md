@@ -33,7 +33,11 @@ categories: [学习笔记]
 
 #### 把文件添加到仓库
     $ git add <file-name>
+    添加全部
+    $ git add .
     $ git commit
+    添加描述
+    $ git commit -m '描述' 
 `git add`可以反复多次使用，添加多个文件，`git commit`可以一次提交很多文件，在`git commit`命令后添加(-m '····')方便从历史记录里找到修改记录。
 
 ### 查看工作区当前状态
