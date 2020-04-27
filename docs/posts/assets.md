@@ -28,6 +28,11 @@ categories: [资源汇总]
 ### [TweenMax](https://www.tweenmax.com.cn/)
   > 适用于移动端和现代互联网的超高性能专业级动画插件
 
+### [Bootstrap](https://v3.bootcss.com/)
+  >  HTML、CSS 和 JS 框架，用于开发响应式布局、移动设备优先的 WEB 项目
+
+--------------------------------------------------------------------
+
 ### [Lodash](https://www.lodashjs.com/)
   > 一致性、模块化、高性能的 JavaScript 实用工具库
 
@@ -49,9 +54,17 @@ categories: [资源汇总]
 ### [QRCode](https://www.jianshu.com/p/d3883e020d99)
   > 用于制作二维码
 
+### [Moment](http://momentjs.cn/)
+  > JavaScript 日期处理类库
+
+### [VuePress](https://vuepress.vuejs.org/zh/)
+  > Vue 驱动的静态网站生成器
+
+----------------------------------------------------------------------
+
 ## 其它
 ### [iconfont](https://www.iconfont.cn/)
   > 图标库
 
-### [vue-element-admin](https://juejin.im/post/59097cd7a22b9d0065fb61d2)
+### [vue-element-admin](https://panjiachen.gitee.io/vue-element-admin/#/)
   > vue后台项目教程
