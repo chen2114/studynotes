@@ -246,3 +246,29 @@ export default {
 }
 </script>
 ```
+## DOM的异步更新
+``` html
+<div>
+  <span>
+    {{index}}
+  </span>
+  <button @click="handleChange">
+    点击
+  </button>
+</div>
+```
+### nextTick
+``` js
+handleChange () {
+  this.$nextTick(() => {
+    this.index++
+  })
+}
+```
+### forceUpdate
+``` js
+handleChange () {
+  this.index++
+  this.$forceUpdate()
+}
+```
