@@ -23,6 +23,36 @@ const requireContext = require.context('./svg', false, /\.svg$/)
 const requireAll = context => context.keys().map(context)
 requireAll(requireContext)
 ```
+### store模块化
+```
+├── store
+    ├── modules
+        └── index.js
+    └── index.js
+```
+modules -> index.js
+``` js
+const files = require.context('.', false, /\.js$/)
+const modules = {}
+
+files.keys().forEach(key => {
+  if (key === './index.js') return
+  modules[key.replace(/(\.\/|\.js)/g, '')] = files(key).default
+})
+
+export default modules
+```
+store -> index.js
+``` js
+import Vue from 'vue'
+import Vuex from 'vuex'
+import modules from './modules'
+Vue.use(Vuex)
+
+export default new Vuex.Store({
+  modules
+})
+```
 ## 父组件和子组件的使用
 ### 传值
 父组件：
