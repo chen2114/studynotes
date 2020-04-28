@@ -167,6 +167,62 @@ export default {
 }
 </script>
 ```
+### .sync使用
+> .sync修饰符作为一个语法糖，他会扩展为一个自动更新父组件属性的v-on监听器
+
+父组件：
+``` vue
+<template>
+  <child :visible.sync="dialogVisible" />
+</template>
+<script>
+import child from './components/child'
+export default {
+  name: 'parent',
+  components: {
+    child
+  },
+  data {
+    return {
+      dialogVisible: true
+    }
+  }
+}
+</script>
+```
+子组件：
+``` vue
+<template>
+  <el-dialog
+    title="弹窗"
+    :visible.sync="dialogVisible"
+  >
+    <span>这是一段信息</span>
+  </el-dialog>
+</template>
+<script>
+export default {
+  name: child,
+  computed: {
+    dialogVisible: {
+      get () {
+        return this.visible
+      },
+      set (val) {
+        this.$emit('update:visible', val)
+      }
+    }
+  },
+  props: {
+    visible: {
+      // .sync 绑定的值
+      type: Boolean,
+      default: false
+    }
+  }
+}
+</script>
+```
 ### ref使用
 > 注意：需在 dom 元素加载完成后 $refs 才能获取到该元素，所以需要判断 $refs 是否获取到元素才可继续，否则会报错
 
