@@ -169,6 +169,9 @@ Git是如何跟踪修改的，每次修改，如果不用git add到暂存区，�
 #### 合并某分支到当前name分支
     $ git merge <name>
 
+### 将某分支指定文件或文件夹替换当前分支的相应文件
+    $ git checkout <name> <filePath>
+
 #### 删除分支
     $ git branch -d <name>
 
