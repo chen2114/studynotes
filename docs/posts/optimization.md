@@ -1,6 +1,6 @@
 ---
 title: vue项目优化
-tags: [项目优化]
+tags: [项目优化, webpack]
 categories: [项目优化]
 ---
 ## 代码包优化

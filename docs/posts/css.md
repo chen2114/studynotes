@@ -118,10 +118,10 @@ categories: [学习笔记]
   内容不超过一屏时，底部固定在浏览器底部，内容超过一屏时，底部跟随在页面之后，将所有页面内容放在写了padding-bottom的`<div class="eui-con">`中，padding-bottom的值与底部的高度相同
   ``` html
   <body>
-	  <div class="eui-con">
-		  ……
+    <div class="eui-con">
+      ……
       <div class="eui-footer">
-        
+
       </div>
     </div>
   </body>
