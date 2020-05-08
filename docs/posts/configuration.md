@@ -1,9 +1,10 @@
 ---
 title: vue-cli3项目常用项配置
-tags: [vue-cli3, webpack, router, axios]
+tags: [vue-cli3, webpack3, config]
 categories: [vue-cli3]
 ---
 [一份完整的vue-cli3项目基础配置项](https://github.com/hangjob/vue-admin)
+
 ### vue.config.js
 完整的架构配置
 ``` js
@@ -191,6 +192,7 @@ module.exports = {
   }
 }
 ```
+
 ### html模板配置cdn
 ``` html
 <!DOCTYPE html>
@@ -223,6 +225,13 @@ module.exports = {
 </body>
 </html>
 ```
+
+### 查看打包分析报告
+生成分析报告
+```
+$ npm run build --report
+```
+
 ### 设置 vscode 识别别名
 在vscode中插件安装栏搜索 Path Intellisense 插件，打开settings.json文件添加 以下代码 "@": "${workspaceRoot}/src"，安以下添加
 ``` js
@@ -254,8 +263,10 @@ module.exports = {
   ]
 }
 ```
+
 ### 配置环境变量开发模式、测试模式、生产模式
 在根目录新建
+
 #### .env.development
 ```
 # 开发环境
@@ -264,6 +275,7 @@ NODE_ENV='development'
 # 设置基础api
 VUE_APP_BASE_API = '/dev-api'
 ```
+
 #### .env.test
 ```
 # 如果我们在.env.test文件中把NODE_ENV设置为test的话，那么打包出来的目录结构是有差异的
@@ -276,12 +288,14 @@ VUE_APP_BASE_API='/test-api'
 
 outputDir = test
 ```
+
 #### .env.production
 ```
 NODE_ENV = 'production'
 
 VUE_APP_SSO='http://http://localhost:9080'
 ```
+
 #### package.json
 ``` json
 "scripts": {
@@ -291,291 +305,4 @@ VUE_APP_SSO='http://http://localhost:9080'
   "test": "vue-cli-service build --mode test", // 测试打包
   "publish": "vue-cli-service build && vue-cli-service build --mode test" // 测试和生产一起打包
  }
-```
-### 请求路由动态添加
-router/index.js文件
-``` js
-import Vue from 'vue'
-import VueRouter from 'vue-router'
-Vue.use(VueRouter)
-
-import defaultRouter from './defaultRouter'
-import dynamicRouter from './dynamicRouter'
-
-import store from '@/store'
-
-const router = new VueRouter({
-  routes: defaultRouter,
-  mode: 'hash',
-  scrollBehavior(to, from, savedPosition) {
-    // keep-alive 返回缓存页面后记录浏览位置
-    if (savedPosition && to.meta.keepAlive) {
-      return savedPosition
-    }
-    // 异步滚动操作
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        resolve({ x: 0, y: 0 })
-      }, 200)
-    })
-  }
-})
-
-// 消除路由重复警告
-const selfaddRoutes = function (params) {
-  router.matcher = new VueRouter().matcher
-  router.addRoutes(params)
-}
-
-// 全局路由拦截
-router.beforeEach((to, from, next) => {
-  const { hasRoute } = store.state // 防止路由重复添加
-  if (hasRoute) {
-    next()
-  } else {
-    dynamicRouter(to, from, next, selfaddRoutes)
-  }
-})
-
-export default router
-```
-dynamicRouter.js
-``` js
-import http from '@/http/request'
-import defaultRouter from './defaultRouter'
-import store from '@/store'
-
-// 重新构建路由对象
-const menusMap = function (menu) {
-  return menu.map(v => {
-    const { path, name, component } = v
-    const item = {
-      path,
-      name,
-      component: () => import(`@/${component}`)
-    }
-    return item
-  })
-}
-
-
-// 获取路由
-const addPostRouter = function (to, from, next, selfaddRoutes) {
-  http.windPost('/mock/menu') // 发起请求获取路由
-    .then(menu => {
-      defaultRouter[0].children.push(...menusMap(menu))
-      selfaddRoutes(defaultRouter)
-      store.commit('hasRoute', true)
-      next({ ...to, replace: true })
-    })
-}
-
-export default addPostRouter
-```
-defaultRouter.js 默认路由
-``` js
-const main = r => require.ensure([], () => r(require('@/layout/main.vue')), 'main')
-const index = r => require.ensure([], () => r(require('@/view/index/index.vue')), 'index')
-const about = r => require.ensure([], () => r(require('@/view/about/about.vue')), 'about')
-const detail = r => require.ensure([], () => r(require('@/view/detail/detail.vue')), 'detail')
-const error = r => require.ensure([], () => r(require('@/view/404/404.vue')), 'error')
-const defaultRouter = [
-  {
-    path: "/", 
-    component: main, // 布局页
-    redirect: {
-        name: "index"
-    },
-    children:[
-      {
-        path: '/index',
-        component: index,
-        name: 'index',
-        meta: {
-            title: 'index'
-        }
-      },
-      {
-        path: '/about',
-        component: about,
-        name: 'about',
-        meta: {
-          title: 'about'
-        }
-      },
-      {
-        path: '/detail',
-        component: detail,
-        name: 'detail',
-        meta: {
-          title: 'detail'
-        }
-      }
-    ]
-  },
-  {
-    path: '/404',
-    component: error,
-    name: '404',
-    meta: {
-      title: '404'
-    }
-  }
-]
-export default defaultRouter
-```
-### axios配置
-``` js
-import axios from "axios"
-import merge from 'lodash/merge'
-import qs from 'qs'
-
-/**
- * 实例化
- * config是库的默认值，然后是实例的 defaults 属性，最后是请求设置的 config 参数。后者将优先于前者
- */
-const http = axios.create({
-  timeout: 1000 * 30,
-  withCredentials: true, // 表示跨域请求时是否需要使用凭证
-})
-
-/**
- * 请求拦截
- */
-http.interceptors.request.use(function (config) {
-  return config
-}, function (error) {
-  return Promise.reject(error)
-})
-
-
-/**
- * 响应拦截
- */
-http.interceptors.response.use(response => {
-  // 过期之类的操作
-  if (response.data && (response.data.code === 401)) {
-    // window.location.href = ''; 重定向
-  }
-  return response
-}, error => {
-  return Promise.reject(error)
-})
-
-
-/**
- * 请求地址处理
- */
-http.adornUrl = (url) => {
-  return url
-}
-
-/**
- * get请求参数处理
- * params 参数对象
- * openDefultParams 是否开启默认参数
- */
-http.adornParams = (params = {}, openDefultParams = true) => {
-  var defaults = {
-    t: new Date().getTime()
-  }
-  return openDefultParams ? merge(defaults, params) : params
-}
-
-
-/**
- * post请求数据处理
- * @param {*} data 数据对象
- * @param {*} openDefultdata 是否开启默认数据?
- * @param {*} contentType 数据格式
- *  json: 'application/json; charset=utf-8'
- *  form: 'application/x-www-form-urlencoded; charset=utf-8'
- */
-http.adornData = (data = {}, openDefultdata = true, contentType = 'json') => {
-  var defaults = {
-    t: new Date().getTime()
-  }
-  data = openDefultdata ? merge(defaults, data) : data
-  return contentType === 'json' ? JSON.stringify(data) : qs.stringify(data)
-}
-
-
-/**
- * windPost请求
- * @param {String} url [请求地址]
- * @param {Object} params [请求携带参数]
- */
-http.windPost = function (url, params) {
-  return new Promise((resolve, reject) => {
-    http.post(http.adornUrl(url), qs.stringify(params))
-      .then(res => {
-        resolve(res.data)
-      })
-      .catch(error => {
-        reject(error)
-      })
-  })
-}
-
-
-/**
- * windJsonPost请求
- * @param {String} url [请求地址]
- * @param {Object} params [请求携带参数]
- */
-http.windJsonPost = function (url, params) {
-  return new Promise((resolve, reject) => {
-    http.post(http.adornUrl(url), http.adornParams(params))
-      .then(res => {
-        resolve(res.data)
-      })
-      .catch(error => {
-        reject(error)
-      })
-  })
-}
-
-
-/**
- * windGet请求
- * @param {String} url [请求地址]
- * @param {Object} params [请求携带参数]
- */
-http.windGet = function (url, params) {
-  return new Promise((resolve, reject) => {
-    http.get(http.adornUrl(url), { params: params })
-      .then(res => {
-        resolve(res.data)
-      })
-      .catch(error => {
-        reject(error)
-      })
-  })
-}
-
-/**
- * 上传图片
- */
-http.upLoadPhoto = function (url, params, callback) {
-  let config = {}
-  if (callback !== null) {
-    config = {
-      onUploadProgress: function (progressEvent) {
-        //属性lengthComputable主要表明总共需要完成的工作量和已经完成的工作是否可以被测量
-        //如果lengthComputable为false，就获取不到progressEvent.total和progressEvent.loaded
-        callback(progressEvent)
-      }
-    }
-  }
-  return new Promise((resolve, reject) => {
-    http.post(http.adornUrl(url), http.adornParams(params), config)
-      .then(res => {
-        resolve(res.data)
-      })
-      .catch(error => {
-        reject(error)
-      })
-  })
-}
-export default http
 ```
