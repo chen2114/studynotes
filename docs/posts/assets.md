@@ -66,5 +66,5 @@ categories: [资源汇总]
 ### [iconfont](https://www.iconfont.cn/)
   > 图标库
 
-### [vue-element-admin](https://panjiachen.github.io/vue-element-admin/#/login?redirect=%2Fdashboard)
+### [vue-element-admin](https://panjiachen.github.io/vue-element-admin)
   > vue后台项目教程
