@@ -178,16 +178,20 @@ categories: [学习笔记]
   ``` js
   let {keys, values, entries} = Object
   let obj = { a: 1, b: 2, c: 3 }
-  for (let key of keys(obj)) {
+  for (let key of Object.keys(obj)) {
     console.log(key); // 'a', 'b', 'c'
   }
-  for (let value of values(obj)) {
+  for (let value of Object.values(obj)) {
     console.log(value); // 1, 2, 3
   }
-  for (let [key, value] of entries(obj)) {
+  for (let [key, value] of Object.entries(obj)) {
     console.log([key, value]); // ['a', 1], ['b', 2], ['c', 3]
   }
   ```
+  >for...of 可使用continue、break、return，虽然无法遍历对象，但可使用以上方法解决<br>
+  for...in, forEach, map循环 无法使用 return, break, continue<br>
+  forEach 无法遍历对象，不能同时遍历多个集合，在遍历的时候无法修改和删除集合数据
+
 ### Symbol
   > 凡是属性名属于 Symbol 类型，就都是独一无二的，可以保证不会与其他属性名产生冲突
   ``` js
@@ -240,9 +244,6 @@ categories: [学习笔记]
     console.log(err)
   })
   ```
-### 遍历
-  > for...in, forEach, map循环 无法使用 return, break, continue<br>
-  for...of 无法遍历对象
 ### Generator
   > 函数会返回一个遍历器对象,可以依次遍历 Generator 函数内部的每一个状态
   ``` js

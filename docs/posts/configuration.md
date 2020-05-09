@@ -1,7 +1,7 @@
 ---
 title: vue-cli3项目常用项配置
 tags: [vue-cli3, webpack3, config]
-categories: [vue-cli3]
+categories: [config]
 ---
 [一份完整的vue-cli3项目基础配置项](https://github.com/hangjob/vue-admin)
 
@@ -55,7 +55,7 @@ module.exports = {
   lintOnSave: false, // 关闭eslint
   productionSourceMap: false,
   publicPath: './', 
-  outputDir: process.env.outputDir, // 生成文件的目录名称
+  outputDir: 'dist', // 生成文件的目录名称
   chainWebpack: config => {
 
     config.resolve.alias
