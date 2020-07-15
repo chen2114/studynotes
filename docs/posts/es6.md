@@ -189,12 +189,24 @@ categories: [学习笔记]
   }
   ```
 ### 遍历方法
-  * for...in 根据key遍历，遍历对象时会从原型上继承属性，可以用hasOwnProperty（）识别出继承属性。
-  * for...of 根据值遍历，for...of用来遍历数据，例如数组中的值，但是也可以遍历字符串，支持Map和Set对象的遍历，避免了所有for...in的弊端，与forEach相比可以正确响应break，continue，return语句
-  * forEach 根据index遍历，forEach一般只能适用于数组,功能是从头到尾把数组遍历一遍，可以有三个参数，后两个可以不写，效率和for循环相近
-  * map 根据index遍历，和forEach相比，使用方法一样有三个参数，map只能对元素进行加工处理，产生一个新的数组对象
-  * filter 对原数组进行过滤筛选，生成新的数组,使用和map样有三个参数。如果对空数组进行筛选，会返回undefined。filter不会改变原数组。
-  * for 常规语句遍历，可循环数字,字符串，数组
+  * for...in
+  
+    根据key遍历，遍历对象时会从原型上继承属性，可以用hasOwnProperty（）识别出继承属性。
+  * for...of
+  
+    根据值遍历，for...of用来遍历数据，例如数组中的值，但是也可以遍历字符串，支持Map和Set对象的遍历，避免了所有for...in的弊端，与forEach相比可以正确响应break，continue，return语句
+  * forEach
+  
+    根据index遍历，forEach一般只能适用于数组,功能是从头到尾把数组遍历一遍，可以有三个参数，后两个可以不写，效率和for循环相近
+  * map
+  
+    根据index遍历，和forEach相比，使用方法一样有三个参数，map只能对元素进行加工处理，产生一个新的数组对象
+  * filter
+  
+    对原数组进行过滤筛选，生成新的数组,使用和map样有三个参数。如果对空数组进行筛选，会返回undefined。filter不会改变原数组。
+  * for
+  
+    常规语句遍历，可循环数字,字符串，数组
 ### Symbol
   > 凡是属性名属于 Symbol 类型，就都是独一无二的，可以保证不会与其他属性名产生冲突
   ``` js
