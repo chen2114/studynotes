@@ -68,6 +68,20 @@ module.exports = {
       .use('image-webpack-loader')
       .loader('image-webpack-loader')
       .options({ bypassOnDebug: true })
+    
+    // svg rule loader
+    // 安装npm i svg-sprite-loader
+    const svgRule = config.module.rule('svg') // 找到 svg-loader
+    svgRule.uses.clear() // 清除已有 loader
+    svgRule // 添加新的 svg loader
+      .test(/\.svg$/)
+      .exclude.add(/node_modules/).end()
+      .include.add(resolve('src/svg')).end() // 处理svg目录
+      .use('svg-sprite-loader')
+      .loader('svg-sprite-loader')
+      .options({
+        symbolId: 'icon-[name]'
+      })
 
     // webpack 会默认给commonChunk打进chunk-vendors，所以需要对webpack的配置进行delete
     config.optimization.delete('splitChunks')
@@ -170,6 +184,8 @@ module.exports = {
 
   pluginOptions: {
     // 配置全局less
+    // 安装npm i style-resources-loader
+    // 安装npm i vue-cli-plugin-style-resources-loader
     'style-resources-loader': {
       preProcessor: 'less',
       patterns: [resolve('./src/style/theme.less')]

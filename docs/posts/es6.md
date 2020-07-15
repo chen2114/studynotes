@@ -188,10 +188,13 @@ categories: [学习笔记]
     console.log([key, value]); // ['a', 1], ['b', 2], ['c', 3]
   }
   ```
-  >for...of 可使用continue、break、return，虽然无法遍历对象，但可使用以上方法解决<br>
-  for...in, forEach, map循环 无法使用 return, break, continue<br>
-  forEach 无法遍历对象，不能同时遍历多个集合，在遍历的时候无法修改和删除集合数据
-
+### 遍历方法
+  * for...in 根据key遍历，遍历对象时会从原型上继承属性，可以用hasOwnProperty（）识别出继承属性。
+  * for...of 根据值遍历，for...of用来遍历数据，例如数组中的值，但是也可以遍历字符串，支持Map和Set对象的遍历，避免了所有for...in的弊端，与forEach相比可以正确响应break，continue，return语句
+  * forEach 根据index遍历，forEach一般只能适用于数组,功能是从头到尾把数组遍历一遍，可以有三个参数，后两个可以不写，效率和for循环相近
+  * map 根据index遍历，和forEach相比，使用方法一样有三个参数，map只能对元素进行加工处理，产生一个新的数组对象
+  * filter 对原数组进行过滤筛选，生成新的数组,使用和map样有三个参数。如果对空数组进行筛选，会返回undefined。filter不会改变原数组。
+  * for 常规语句遍历，可循环数字,字符串，数组
 ### Symbol
   > 凡是属性名属于 Symbol 类型，就都是独一无二的，可以保证不会与其他属性名产生冲突
   ``` js
@@ -200,6 +203,79 @@ categories: [学习笔记]
   s1 // Symbol(foo)
   s2 // Symbol(bar)
   s1 === s2 // false
+  ```
+### Set 和 Map 数据结构
+  * Set
+  ``` js
+  let set = new Set([1, 2, 3, 4, 4])
+
+  [...set] // [1, 2, 3, 4]
+  Array.from(set) // [1, 2, 3, 4]
+  set.add(5) // {1, 2, 3, 4, 5}
+  set.size // 5
+  set.has(1) // true
+  set.delete(3) // 返回一个布尔值，表示删除是否成功
+  set.clear() // 清除所有成员，没有返回值
+
+  let set = new Set(['red', 'green', 'blue']);
+
+  for (let item of set) {
+    console.log(item)
+  }
+  // red
+  // green
+  // blue
+  ```
+  * Map
+  ``` js
+  // 对象 转 Map
+  let obj = {'name': '张三', 'title': 'Author'}
+  const map = new Map(Object.entries(obj))
+
+  [...map.keys()] // ['name', 'title']
+  [...map.values()] // ['张三', 'Author']
+  [...map] // [['name', '张三'], ['title', 'Author']]
+  Array.from(map) // ['name', '张三', 'title', 'Author']
+
+  map.set(1, '男') // {'name'=>'张三', 'title'=>'Author', 1=>'男'}
+  map.get(1) // '男'
+  map.has('name') // true
+  map.size() // 3
+  map.delete('title') // 返回一个布尔值，表示删除是否成功。
+  map.clear() // 清除所有成员，没有返回值
+
+  // 注意，只有对同一个对象的引用，Map 结构才将其视为同一个键。这一点要非常小心。
+  map.set(['a'], 555)
+  map.get(['a']) // undefined
+
+  const k1 = ['a']
+  const k2 = ['a']
+  map.set(k1, 111).set(k2, 222)
+  map.get(k1) // 111
+  map.get(k2) // 222
+
+  const map = new Map([
+    ['F', 'no'],
+    ['T',  'yes'],
+  ])
+
+  for (let key of map.keys()) {
+    console.log(key)
+  }
+  // "F"
+  // "T"
+
+  for (let value of map.values()) {
+    console.log(value)
+  }
+  // "no"
+  // "yes"
+
+  for (let [key, value] of map) {
+    console.log(key, value)
+  }
+  // "F" "no"
+  // "T" "yes"
   ```
 ### Proxy 和 Reflect
   > Proxy： 可以对外界的访问进行过滤和改写， Reflect： 可以拿到语言内部的方法
