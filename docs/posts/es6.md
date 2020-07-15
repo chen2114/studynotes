@@ -228,8 +228,8 @@ categories: [学习笔记]
   ```
   * Map
   ``` js
-  // 对象 转 Map
   let obj = {'name': '张三', 'title': 'Author'}
+  // 对象 转 Map
   const map = new Map(Object.entries(obj))
 
   [...map.keys()] // ['name', 'title']
