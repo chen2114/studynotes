@@ -108,6 +108,14 @@ export default {
     }
   },
   methods: {
+    /**
+      * @description 函数描述的 必填
+      * @param id {Number} 传入需要获取名称的人物id 参数必填
+      * @return {String} 返回的姓名 返回值必填，空为void
+      * @author shi 2015/07/21 作者可选
+      * @version 1.1.0 可以不写 版本可选
+      * @example 示例代码，可选
+      */
     handleClick () {
       this.$emit('handle-click', '子组件的值')
     }
