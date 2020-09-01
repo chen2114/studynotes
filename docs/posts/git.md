@@ -169,6 +169,9 @@ Git是如何跟踪修改的，每次修改，如果不用git add到暂存区，�
 #### 创建+切换分支并从远处拉取该分支代码
     $ git checkout -b <name> origin/<name>
 
+#### 将指定分支的指定文件合并到当前所在分支
+    $ git checkout 指定分支名称 指定文件/文件夹路径
+
 #### 给分支重命名
     git branch -m oldName newName
 
