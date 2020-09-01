@@ -34,11 +34,7 @@
 
 [vuepress-theme-indigo-material](https://github.com/zhhlwd/vuepress-theme-indigo-material) 的原主题是[hexo-theme-indigo](https://github.com/yscoder/hexo-theme-indigo), github 的 star 数高达**2042**, fork 的有**451**个, 它在静态博客网站中的应用处处可见.在这里首先感谢原作者.
 
-然而它的定位是仅支持 IE10+ 等现代浏览器。既然不需要支持老版本浏览器, 在前端发展迅猛的今天, 已经有许多技术能够让网址更快, 所以我用[VuePress](https://github.com/vuejs/vuepress)来重写了它. 其实 indigo 的原作者已经在用 vuepress 重写了, 但是项目一直没有进展, 所以我接过了这个任务, 最后重写的效果是挺满意的.
-
-本主题在我的有 51 篇博客笔记下, 部署在 github page,网页加载速度非常快,更快的是,网页加载完成后,此后每个页面的打开速度,都是仿佛在点击本地文件.
-
-具体感受，国内请点击码云的 [博客网站（国内 gitee）](https://zhhlwd.gitee.io/)，国外请点击我的[博客网站（国外 github）](https://zhhlwd.github.io/)来亲身感受, 部署在 github page 下
+具体感受，国内请点击码云的 [博客网站（国内 gitee）](https://zhhlwd.gitee.io/)，国外请点击[博客网站（国外 github）](https://zhhlwd.github.io/)来亲身感受, 部署在 github page 下
 
 正如 VuePress 文档所说:
 
@@ -51,7 +47,7 @@
 ### 您换主题的理由
 
 - 更快更小,
-- 改进我在一年的的使用中感受到的原主题一些交互和外观, 例如删除分享功能, 移除了打赏功能, 增加移动端文章目录导航等等
+- 改进我使用中感受到的原主题一些交互和外观, 例如删除分享功能, 移除了打赏功能, 增加移动端文章目录导航等等
 - 更加容易自定义, vuepress 的主题和插件很灵活,只要您会 Vue, 就能利用相关知识修改原主题, 和平时工作中写的页面和 APP 差不多
 - 基于本地数据的全文搜索
 - 拥抱 vue, 然后能享用它的生态, 例如组件库, 本主题就利用了 element ui
@@ -99,7 +95,7 @@ vuepress 默认有编译一些对老版本浏览器的兼容, 具体控制请看
 下载分支的命令:
 
 ```sh
-git clone -b template https://github.com/zhhlwd/vuepress-theme-indigo-material.git
+git clone -b template https://github.com/chen2114/study-notes.git
 ```
 
 这是 template 的目录说明
@@ -288,7 +284,7 @@ vuepress 的构建的确麻烦不少, 但是相当于它的网页运行速度, �
 
 ## UI 变化
 
-- 删除了分享和打赏功能, 因为在我一年多的使用中没有一次用到
+- 删除了分享和打赏功能
 - 文章目录改为 H1,H2,H3....,H 不代表为是一个 html 的 h1 标题,而是此标题在当前文章所有标题中的等级,H1 最高,H6 最低
 - 标签放在卡片中,更加直接的看到和点击
 - 增加了自我介绍页,可以用来展示一些除了文章博客以外的内容,例如,求职,自我介绍,开源项目,交流群,版权声明
@@ -308,15 +304,3 @@ vuepress 的构建的确麻烦不少, 但是相当于它的网页运行速度, �
 
 - 顶部的菜单按钮在屏幕大小发生变化到了断点时会在一些情况出乎意料,本主题的媒体查询断点是宽 1190px,比 iPad pro 宽, 因为本主题定位的是博客,不应该有在浏览的时候有太大的窗口大小变化,所以也不是至关重要,后面会尝试解决
 - 在首次加载时侧边栏上部分会闪, 初步判断是样式文件加载慢的问题, 毕竟打包成了一个 css,网页一大部分时间在加载它
-
-## 提问
-
-可以在 issue 提问, 也可以是加入 qq 群, 我们一起讨论
-
-```
-qq群: 668387596
-```
-
-最后感谢您能看到这里, 您都看到这里了, 您能给我一个 star 吗?
-
-github 地址:https://github.com/zhhlwd/vuepress-theme-indigo-material
