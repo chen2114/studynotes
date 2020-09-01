@@ -110,6 +110,9 @@ Git是如何跟踪修改的，每次修改，如果不用git add到暂存区，�
     $ git push -u origin master
 -u 表示第一次推送master分支的所有内容，此后，每次本地提交后，只要有必要，就可以使用命令`$ git push origin master`推送最新修改。
 
+#### 推送指定文件/文件夹到指定分支
+    git subtree push --prefix 文件或文件夹路径 origin 推送到的分支名
+
 #### 从远程克隆
     $ git clone https://github.com/usern/repositoryname.git
     $ git clone -b 分支名 仓库地址
