@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui"
+    />
+    <title>【学习笔记】之git | chen</title>
+    <meta name="description" content="三人行，必有我师焉，择其善者而从之，其不善者而改之。" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="【学习笔记】之git | chen" />
+    <meta property="og:site_name" content="【学习笔记】之git | chen" />
+    <meta property="og:locale" content="zh-CN" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="【学习笔记】之git | chen" />
+    <link rel="shortcut icon" href="/studynotes/favicon.ico">
+    
+    <link rel="preload" href="/studynotes/assets/css/0.styles.cc0ca69d.css" as="style"><link rel="preload" href="/studynotes/assets/js/app.dacb244d.js" as="script"><link rel="preload" href="/studynotes/assets/js/1.b2a4ee79.js" as="script"><link rel="preload" href="/studynotes/assets/js/14.0b1264cb.js" as="script"><link rel="preload" href="/studynotes/assets/js/5.776f296b.js" as="script"><link rel="preload" href="/studynotes/assets/js/7.f548c11c.js" as="script"><link rel="preload" href="/studynotes/assets/js/9.9124ed9a.js" as="script"><link rel="preload" href="/studynotes/assets/js/6.b7a73979.js" as="script"><link rel="preload" href="/studynotes/assets/js/26.f72c4626.js" as="script"><link rel="preload" href="/studynotes/assets/js/13.420deebf.js" as="script"><link rel="preload" href="/studynotes/assets/js/15.800a8738.js" as="script"><link rel="prefetch" href="/studynotes/assets/js/10.5d05ae3c.js"><link rel="prefetch" href="/studynotes/assets/js/11.f8df6b71.js"><link rel="prefetch" href="/studynotes/assets/js/12.e81c4da3.js"><link rel="prefetch" href="/studynotes/assets/js/16.f30e0752.js"><link rel="prefetch" href="/studynotes/assets/js/17.d81e32a3.js"><link rel="prefetch" href="/studynotes/assets/js/18.c936b789.js"><link rel="prefetch" href="/studynotes/assets/js/19.73d04dd0.js"><link rel="prefetch" href="/studynotes/assets/js/20.42271dcb.js"><link rel="prefetch" href="/studynotes/assets/js/21.533cdd45.js"><link rel="prefetch" href="/studynotes/assets/js/22.a34450d0.js"><link rel="prefetch" href="/studynotes/assets/js/23.5dafabf4.js"><link rel="prefetch" href="/studynotes/assets/js/24.5470cf59.js"><link rel="prefetch" href="/studynotes/assets/js/25.6eefc82d.js"><link rel="prefetch" href="/studynotes/assets/js/27.64615199.js"><link rel="prefetch" href="/studynotes/assets/js/28.9208b93f.js"><link rel="prefetch" href="/studynotes/assets/js/29.217d58ea.js"><link rel="prefetch" href="/studynotes/assets/js/30.6099970b.js"><link rel="prefetch" href="/studynotes/assets/js/31.395bf357.js"><link rel="prefetch" href="/studynotes/assets/js/32.74ad2e46.js"><link rel="prefetch" href="/studynotes/assets/js/33.697f428f.js"><link rel="prefetch" href="/studynotes/assets/js/34.9af29c6c.js"><link rel="prefetch" href="/studynotes/assets/js/35.9476566a.js"><link rel="prefetch" href="/studynotes/assets/js/36.8356baba.js"><link rel="prefetch" href="/studynotes/assets/js/37.4111b7cc.js"><link rel="prefetch" href="/studynotes/assets/js/4.759b626d.js"><link rel="prefetch" href="/studynotes/assets/js/8.866b1478.js"><link rel="prefetch" href="/studynotes/assets/js/vendors~search.d2e81ceb.js">
+    <link rel="stylesheet" href="/studynotes/assets/css/0.styles.cc0ca69d.css">
+  </head>
+  <body>
+    <div id="loader-wrapper" style="display: none;opacity:0">
+      <div id="loader"></div>
+      <div class="loader-section section-left"></div>
+      <div class="loader-section section-right"></div>
+    </div>
+    <div id="app" data-server-rendered="true"><div style="height:100%;" data-v-80d5f2bc><section class="el-container main-container" data-v-80d5f2bc><aside class="el-aside menu" style="width:auto;" data-v-67e96130 data-v-80d5f2bc><ul role="menubar" class="menu-wrap el-menu" style="background-color:;" data-v-67e96130><li data-v-67e96130><div class="brand-wrap" style="background-image:url(/studynotes/brand.jpg);" data-v-67e96130><div class="brand" data-v-67e96130><a href="/studynotes/" class="avatar waves-effect waves-circle waves-light router-link-active" data-v-67e96130><img src="/studynotes/logo.jpg" data-v-67e96130></a> <hgroup class="introduce" data-v-67e96130><div class="nickname" data-v-67e96130>chen</div> <a title="731003808@qq.com" class="mail" data-v-67e96130>731003808@qq.com</a></hgroup></div></div></li> <li role="menuitem" tabindex="-1" class="el-menu-item" style="padding-left:20px;color:;background-color:;" data-v-67e96130><i class="iconfont icon-home" data-v-67e96130></i> <span class="item-title" data-v-67e96130>主页</span></li> <li role="menuitem" tabindex="-1" class="el-menu-item" style="padding-left:20px;color:;background-color:;" data-v-67e96130><i class="iconfont icon-biaoqian" data-v-67e96130></i> <span class="item-title" data-v-67e96130>标签分类</span></li> <li role="menuitem" tabindex="-1" class="el-menu-item" style="padding-left:20px;color:;background-color:;" data-v-67e96130><i class="iconfont icon-wenzhang" data-v-67e96130></i> <span class="item-title" data-v-67e96130>时间归档</span></li> <li role="menuitem" tabindex="-1" class="el-menu-item" style="padding-left:20px;color:;background-color:;" data-v-67e96130><i class="iconfont icon-github" data-v-67e96130></i> <span class="item-title" data-v-67e96130>Github</span></li> <li role="menuitem" tabindex="-1" class="el-menu-item" style="padding-left:20px;color:;background-color:;" data-v-67e96130><i class="iconfont icon-aboutme" data-v-67e96130></i> <span class="item-title" data-v-67e96130>自我介绍</span></li></ul></aside> <section class="el-container container-warp" data-v-80d5f2bc><header id="topHeader" class="el-header top-header" style="height:60px;padding-left:260px;" data-v-1a942948 data-v-80d5f2bc><div class="header-warp el-row is-align-middle el-row--flex" data-v-1a942948><div class="el-col el-col-12 el-col-xs-7" data-v-1a942948><div class="el-row is-align-middle el-row--flex" data-v-1a942948><div class="el-col el-col-2" data-v-1a942948><button type="button" class="el-button el-button--primary is-circle" data-v-1a942948><!----><!----><span><i class="iconfont icon-caidan" data-v-1a942948></i></span></button></div></div></div> <div class="el-col el-col-20 el-col-xs-24" data-v-1a942948><div class="grid-content bg-purple-light" data-v-1a942948><div class="el-row is-justify-end is-align-middle el-row--flex" data-v-1a942948><div class="el-col el-col-13 el-col-xs-24 el-col-sm-21 el-col-md-17 el-col-lg-13" data-v-1a942948><div aria-haspopup="listbox" role="combobox" aria-owns="el-autocomplete-7498" class="el-autocomplete search-input" data-v-1a942948><div class="el-input el-input--small el-input--suffix"><!----><input type="text" autocomplete="off" valueKey="value" popperClass="search-popper" placeholder="搜搜看" fetchSuggestions="function () { [native code] }" debounce="300" placement="bottom-start" popperAppendToBody="true" value="" class="el-input__inner"><!----><span class="el-input__suffix"><span class="el-input__suffix-inner"><i class="el-input__icon el-icon-search search-ico" data-v-1a942948></i><!----></span><!----></span><!----></div><div role="region" class="el-autocomplete-suggestion el-popper search-popper" style="width:;display:none;"><div class="el-scrollbar"><div class="el-autocomplete-suggestion__wrap el-scrollbar__wrap el-scrollbar__wrap--hidden-default"><ul class="el-scrollbar__view el-autocomplete-suggestion__list"></ul></div><div class="el-scrollbar__bar is-horizontal"><div class="el-scrollbar__thumb" style="width:0;transform:translateX(0%);ms-transform:translateX(0%);webkit-transform:translateX(0%);"></div></div><div class="el-scrollbar__bar is-vertical"><div class="el-scrollbar__thumb" style="height:0;transform:translateY(0%);ms-transform:translateY(0%);webkit-transform:translateY(0%);"></div></div></div></div></div></div></div></div></div></div></header> <main class="el-main my-main" style="margin-left:240px;" data-v-105de776 data-v-80d5f2bc><div class="content-header index-header" data-v-60d87e45 data-v-105de776><div class="container fade-scale in" data-v-60d87e45><h1 id="conentHeader" class="title" data-v-60d87e45>【学习笔记】之git</h1> <h5 class="subtitle" data-v-60d87e45>最后更新时间：2020-08-24 16:43:45</h5></div></div> <div data-v-95d4b5b2 data-v-105de776 data-v-105de776><div class="post-content el-row is-justify-center el-row--flex" data-v-95d4b5b2><div id="post-card" class="post-card post-sign el-col el-col-16 el-col-xs-24 el-col-sm-23 el-col-md-23 el-col-lg-16" data-v-95d4b5b2><div class="content__default" data-v-95d4b5b2><h2 id="git介绍"><a href="#git介绍" class="header-anchor">#</a> Git介绍</h2> <ul><li>Git是分布式版本控制系统</li> <li>集中式VS分布式：
+<ol><li>集中式版本控制系统，版本库集中存放在中央服务器，必须要联网才能工作,没有历史版本库。</li> <li>分布式版本控制系统，版本控制系统没有“中央服务器”，每个人电脑上都是一个完整的版本库。</li> <li>分布式系统优势：安全性更高，不需要联网，如果中央服务器故障，任何其他一个开发人员的本地都有最新的带有历史记录的版本库。</li></ol></li> <li>主要区别在于历史版本库的存放，集中式系统历史版本只存在于中央服务器，而分布式控制系统中每个本地库都有历史记录存放。</li></ul> <h2 id="git命令"><a href="#git命令" class="header-anchor">#</a> Git命令</h2> <hr> <h3 id="git配置"><a href="#git配置" class="header-anchor">#</a> Git配置</h3> <pre><code>$ git config --global user.name &quot;Your Name&quot;
+$ git config --global user.email &quot;email@example.com&quot;  
+</code></pre> <p>注意<code>git config</code>命令的<code>--global</code>参数，用了这个参数，表示你这台机器上所有的Git仓库都会使用这个配置，当然也可以对某个仓库指定不同的用户名和Email地址。</p> <h3 id="免密提交"><a href="#免密提交" class="header-anchor">#</a> 免密提交</h3> <p>在 git 文件夹的 config 配置文件修改 url</p> <pre><code>url = https://gitee.com/chen2114/studyNotes.git
+改成:
+url = https://账号:密码@gitee.com/chen2114/studyNotes.git
+</code></pre> <h3 id="创建版本库"><a href="#创建版本库" class="header-anchor">#</a> 创建版本库</h3> <h4 id="在当前目录创建git仓库"><a href="#在当前目录创建git仓库" class="header-anchor">#</a> 在当前目录创建git仓库</h4> <pre><code>$ git init 
+</code></pre> <h4 id="把文件添加到仓库"><a href="#把文件添加到仓库" class="header-anchor">#</a> 把文件添加到仓库</h4> <pre><code>$ git add &lt;file-name&gt;
+添加全部
+$ git add .
+$ git commit
+添加描述
+$ git commit -m '描述' 
+</code></pre> <p><code>git add</code>可以反复多次使用，添加多个文件，<code>git commit</code>可以一次提交很多文件，在<code>git commit</code>命令后添加(-m '····')方便从历史记录里找到修改记录。</p> <h3 id="查看工作区当前状态"><a href="#查看工作区当前状态" class="header-anchor">#</a> 查看工作区当前状态</h3> <pre><code>$ git status 
+</code></pre> <h3 id="查看文件修改内容"><a href="#查看文件修改内容" class="header-anchor">#</a> 查看文件修改内容</h3> <pre><code>$ git diff
+</code></pre> <h3 id="版本回退"><a href="#版本回退" class="header-anchor">#</a> 版本回退</h3> <pre><code>$ git reset -- hard HEAD^
+</code></pre> <p>HEAD指向的版本是当前版本，回到上一版本使用以上命令，如果回退上两个版本使用<code>HEAD^^</code>，如果回退版本数较大（如往上50个版本），使用<code>HEAD~50</code>。</p> <h3 id="回退指定版本"><a href="#回退指定版本" class="header-anchor">#</a> 回退指定版本</h3> <pre><code>$ git reset --hard commit_id
+</code></pre> <p><code>commit_id</code>是指定版本号，是由SHA1计算出来的数字</p> <h3 id="查看提交历史"><a href="#查看提交历史" class="header-anchor">#</a> 查看提交历史</h3> <pre><code>$ git log   
+</code></pre> <h3 id="查看命令历史"><a href="#查看命令历史" class="header-anchor">#</a> 查看命令历史</h3> <pre><code>$ git reflog
+</code></pre> <h3 id="工作区、暂存区和版本库"><a href="#工作区、暂存区和版本库" class="header-anchor">#</a> 工作区、暂存区和版本库</h3> <blockquote><p>git与其他版本控制系统的不同之处就是有暂存区的概念，工作区就是电脑中能看到的目录，工作区有一个隐藏目录[.git]，这是git的版本库。版本库里有许多东西，最重要的是称为stage的暂存区。</p></blockquote> <p>将文件往版本库里添加时是分两步执行的:<br> <ul><li>第一步是用<code>git add</code>把文件添加进去，实际上就是把文件修改添加到暂存区。</li> <li>第二步是用<code>git commit</code>提交修改，实际上就是把暂存区的所有内容提交到当前分支。</li></ul>
+Git是如何跟踪修改的，每次修改，如果不用git add到暂存区，那就不会加入到commit中。</p> <h3 id="撤销修改"><a href="#撤销修改" class="header-anchor">#</a> 撤销修改</h3> <h4 id="丢弃工作区的修改"><a href="#丢弃工作区的修改" class="header-anchor">#</a> 丢弃工作区的修改</h4> <pre><code>$ git checkout -- &lt;file&gt;
+</code></pre> <p>该命令是将文件在工作去的修改全部撤销，这里有两种情况：
+<ol><li>一种是file自修改后还没有被放到暂存区，现在，撤销修改就回到和版本库一模一样的状态；</li> <li>一种是file已经添加到暂存区后，又作了修改，现在，撤销修改就回到添加到暂存区后的状态。</li></ol>
+总之，就是让这个文件回到最近一次git commit或git add时的状态。</p> <h4 id="丢弃暂存区的修改"><a href="#丢弃暂存区的修改" class="header-anchor">#</a> 丢弃暂存区的修改</h4> <p>改乱了工作区某个文件的内容同时还添加到了暂存区，想丢弃修改时，先使用命令<code>git reset HEAD &lt;file&gt;</code>，之后按撤销工作区修改进行操作。</p> <h4 id="进行了commit命令提交的修改"><a href="#进行了commit命令提交的修改" class="header-anchor">#</a> 进行了commit命令提交的修改</h4> <p>已经提交了不合适的修改到版本库时，想要撤销修改，使用版本回退命令，前提是没有推送到远程库.</p> <h3 id="删除文件"><a href="#删除文件" class="header-anchor">#</a> 删除文件</h3> <pre><code>$ git rm &lt;file&gt;
+</code></pre> <p>当你要删除文件<code>text.txt</code>的时候，可以采用命令：<code>rm test.txt</code>
+这个时候有两种情况：<br>
+第一种情况:的确要把<code>test.txt</code>删掉，那么可以执行
+<code>$ git rm test.txt</code> <code>$ git commit -m &quot;remove test.txt&quot;</code>
+此时文件被删除，且删除记录上传本地库。<br>
+第二种情况:误删文件，想恢复，这时候还没有<code>commit -m &quot;remove test.txt&quot;</code>，执行<code>git checkout test.txt</code>将文件恢复。<br>
+如果执行完<code>git commit -m &quot;remove test.txt&quot;</code>后就不能用<code>checkout</code>恢复了，得用<code>git reset --hard HEAD^</code>，再从版本库写回到工作区。<br> <code>git rm</code>用于删除一个文件。如果一个文件已经被提交到版本库，那么你永远不用担心误删，但是要小心，你只能恢复文件到最新版本，你会丢失最近一次提交后你修改的内容。</p> <h3 id="远程仓库"><a href="#远程仓库" class="header-anchor">#</a> 远程仓库</h3> <h4 id="创建ssh-key"><a href="#创建ssh-key" class="header-anchor">#</a> 创建SSH Key</h4> <pre><code>$ ssh-keygen -t rsa -C &quot;youremail@example.com&quot;
+</code></pre> <h4 id="查看远程库信息"><a href="#查看远程库信息" class="header-anchor">#</a> 查看远程库信息</h4> <pre><code>$ git remote -v
+</code></pre> <h4 id="关联远程仓库"><a href="#关联远程仓库" class="header-anchor">#</a> 关联远程仓库</h4> <pre><code>$ git remote add origin https://github.com/username/repositoryname.git
+</code></pre> <h4 id="推送到远程仓库"><a href="#推送到远程仓库" class="header-anchor">#</a> 推送到远程仓库</h4> <pre><code>$ git push -u origin master
+</code></pre> <p>-u 表示第一次推送master分支的所有内容，此后，每次本地提交后，只要有必要，就可以使用命令<code>$ git push origin master</code>推送最新修改。</p> <h4 id="从远程克隆"><a href="#从远程克隆" class="header-anchor">#</a> 从远程克隆</h4> <pre><code>$ git clone https://github.com/usern/repositoryname.git
+$ git clone -b 分支名 仓库地址
+</code></pre> <p><strong>注意:</strong>当你不能使用<code>git@github.com</code>命令来进行推送和克隆，是因为没有安装密钥。添加私秘钥到<code>$ ssh-add ~/.ssh/id_rsa</code><br>
+如果添加失败可以先执行命令<code>$ eval `ssh-agent`</code> `是～键上的那个符号，然后再次添加私秘钥。<br>
+用<code>$ ssh -T git@github.com</code>判断是否绑定成功。如果返回<code>successfully</code>表示成功。</p> <h4 id="删除已经关联的远程库"><a href="#删除已经关联的远程库" class="header-anchor">#</a> 删除已经关联的远程库</h4> <pre><code>&amp; git remote rm remote-name
+</code></pre> <p>若远程库默认名字为origin，则</p> <pre><code>$ git remote rm origin
+</code></pre> <h4 id="本地库既关联github，又关联码云"><a href="#本地库既关联github，又关联码云" class="header-anchor">#</a> 本地库既关联GitHub，又关联码云</h4> <p>如原来已经关联了默认名origin的GitHub</p> <p>1.先删除已关联的名为origin的远程库：</p> <pre><code>$ git remote rm origin
+</code></pre> <p>2.然后，先关联GitHub的远程库：</p> <pre><code>$ git remote add github git@github.com:username/repositoryname.git
+</code></pre> <p>3.接着，再关联码云的远程库：</p> <pre><code>$ git remote add gitee git@gitee.com:username/repositoryname.git
+</code></pre> <p>同样注意，远程库的名称叫gitee，不叫origin了</p> <p><strong>注意</strong>多个关联后以上所以命令含的origin都换成相应的github或gitee</p> <p>如果要推送到GitHub，使用命令：</p> <pre><code>$ git push github master
+</code></pre> <p>如果要推送到码云，使用命令：</p> <pre><code>$ git push gitee master
+</code></pre> <h3 id="分支管理"><a href="#分支管理" class="header-anchor">#</a> 分支管理</h3> <h4 id="查看分支"><a href="#查看分支" class="header-anchor">#</a> 查看分支</h4> <pre><code>$ git branch
+</code></pre> <h4 id="创建分支"><a href="#创建分支" class="header-anchor">#</a> 创建分支</h4> <pre><code>$ git branch &lt;name&gt;
+</code></pre> <h4 id="切换分支"><a href="#切换分支" class="header-anchor">#</a> 切换分支</h4> <pre><code>$　git checkout &lt;name&gt;
+</code></pre> <h4 id="创建-切换分支"><a href="#创建-切换分支" class="header-anchor">#</a> 创建+切换分支</h4> <pre><code>$ git checkout -b &lt;name&gt;
+</code></pre> <h4 id="创建-切换分支并从远处拉取该分支代码"><a href="#创建-切换分支并从远处拉取该分支代码" class="header-anchor">#</a> 创建+切换分支并从远处拉取该分支代码</h4> <pre><code>$ git checkout -b &lt;name&gt; origin/&lt;name&gt;
+</code></pre> <h4 id="给分支重命名"><a href="#给分支重命名" class="header-anchor">#</a> 给分支重命名</h4> <pre><code>git branch -m oldName newName
+</code></pre> <h4 id="合并某分支到当前name分支"><a href="#合并某分支到当前name分支" class="header-anchor">#</a> 合并某分支到当前name分支</h4> <pre><code>$ git merge &lt;name&gt;
+</code></pre> <h3 id="将某分支指定文件或文件夹替换当前分支的相应文件"><a href="#将某分支指定文件或文件夹替换当前分支的相应文件" class="header-anchor">#</a> 将某分支指定文件或文件夹替换当前分支的相应文件</h3> <pre><code>$ git checkout &lt;name&gt; &lt;filePath&gt;
+</code></pre> <h4 id="删除分支"><a href="#删除分支" class="header-anchor">#</a> 删除分支</h4> <pre><code>$ git branch -d &lt;name&gt;
+</code></pre> <h4 id="强行删除分支"><a href="#强行删除分支" class="header-anchor">#</a> 强行删除分支</h4> <pre><code>$ git branch -D &lt;name&gt;
+</code></pre> <p>如果要丢弃一个没有被合并过的分支，可以通过以上命令来实现。</p> <h4 id="查看分支合并图"><a href="#查看分支合并图" class="header-anchor">#</a> 查看分支合并图</h4> <pre><code>$ git log --graph
+</code></pre> <p>当Git无法自动合并分支时，就必须首先解决冲突。解决冲突后，再提交，合并完成。
+用<code>git log --graph</code>命令可以看到分支合并图。</p> <h4 id="普通模式合并分支"><a href="#普通模式合并分支" class="header-anchor">#</a> 普通模式合并分支</h4> <pre><code>$ git merge --no-ff -m &quot;description&quot; &lt;branchname&gt;
+</code></pre> <p>通常进行分支合并时，git会使用Fast forward模式，删除分支后，分支信息会丢失，可以使用<code>--on-ff</code>参数，禁用Fast forward，需要时加上一个<code>-m</code>参数把commit描述写进去。这样进行合并后的历史有分支，能看出来曾经做过合并。</p> <h4 id="保存工作现场"><a href="#保存工作现场" class="header-anchor">#</a> 保存工作现场</h4> <pre><code>$ git stash  
+</code></pre> <h4 id="查看工作现场"><a href="#查看工作现场" class="header-anchor">#</a> 查看工作现场</h4> <pre><code>$ git stash list
+</code></pre> <h4 id="恢复工作现场"><a href="#恢复工作现场" class="header-anchor">#</a> 恢复工作现场</h4> <pre><code>$ git stash pop
+</code></pre> <h4 id="在新建分支中修改bug时的推荐操作"><a href="#在新建分支中修改bug时的推荐操作" class="header-anchor">#</a> 在新建分支中修改bug时的推荐操作</h4> <p>转自<a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000" target="_blank" rel="noopener noreferrer">教程<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>讨论区“我有疫苗”用户的<a href="https://www.liaoxuefeng.com/discuss/001409195939432748a2c9fae3846bc98b3c2a547fa321b000/0015444271534391cee28ca27ed474d97b30b2b0ad6b534000" target="_blank" rel="noopener noreferrer">评论<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> <pre>首先理清两个概念：
+未被追踪的文件:指的是新建的文件或文件夹且还没加入到暂存区(新建的还没有被git add)
+未加入到暂存区的文件:指的是已经被追踪过，但是没有加入到暂存区(已经执行过git add/commit的但是这次修改后还没有git add)
+举例:
+readme.md  已经被git add/git commit过，但是呢,我这次只是修改了,而且没有修改完,不能commit;
+test    新建的文件夹,没有被git add/git commit;
+有个bug需要处理,这时候我需要切换分支，去处理bug
+正确的步骤:
+git add test（让git去追踪这个新文件）
+git stash保留现场
+如果不执行这两个命令，那么在修改BUG完成之后git status，就会发现readme.md没有添加到暂存区，同时又多了个test文件,
+但是自己的readme.md没有完成，万万不可以提交，这样导致bug的修改代码也提交不了。
+所以需要git stash，这样在提交修改bug代码的时候 ，就不会看见readme.md 和 test。可以安心提交修改bug的代码。
+</pre></p> <h4 id="从本地推送分支"><a href="#从本地推送分支" class="header-anchor">#</a> 从本地推送分支</h4> <pre><code>$ git push origin branch-name
+</code></pre> <p>如果推送失败，先用git pull抓取远程的新提交；</p> <h4 id="在本地创建和远程分支对应的分支"><a href="#在本地创建和远程分支对应的分支" class="header-anchor">#</a> 在本地创建和远程分支对应的分支</h4> <pre><code>$ git checkout -b branch-name origin/branch-name
+</code></pre> <p>本地和远程分支的名称最好一致；</p> <h4 id="建立本地分支和远程分支的关联"><a href="#建立本地分支和远程分支的关联" class="header-anchor">#</a> 建立本地分支和远程分支的关联</h4> <pre><code>$ git branch --set-upstream branch-name origin/branch-name
+</code></pre> <h4 id="从远程抓取分支"><a href="#从远程抓取分支" class="header-anchor">#</a> 从远程抓取分支</h4> <pre><code>$ git pull
+</code></pre> <p>如果有冲突，要先处理冲突。</p> <h3 id="标签"><a href="#标签" class="header-anchor">#</a> 标签</h3> <p>git标签是版本库的快照，实际就是某个commit的指针，如果要找到某次版本的commit号，数字复杂不好找，使用tag取一个易于记住和理解的名字就方便许多，它跟某个commit绑在一起。（类似于域名和IP地址的关系？）</p> <h4 id="新建标签"><a href="#新建标签" class="header-anchor">#</a> 新建标签</h4> <pre><code>$ git tag &lt;tagname&gt; 
+</code></pre> <p>默认为HEAD，也可以指定一个commit id。</p> <h4 id="查看标签信息"><a href="#查看标签信息" class="header-anchor">#</a> 查看标签信息</h4> <pre><code>$ git show &lt;tagname&gt;
+</code></pre> <h4 id="创建带有说明的标签"><a href="#创建带有说明的标签" class="header-anchor">#</a> 创建带有说明的标签</h4> <pre><code>$ git tag -a &lt;tagname&gt; -m &lt;description&gt; &lt;branchname&gt; or commit_id
+</code></pre> <p>用-a指定标签名，-m指定说明文字</p> <h4 id="查看所有标签"><a href="#查看所有标签" class="header-anchor">#</a> 查看所有标签</h4> <pre><code>$ git tag
+</code></pre> <h4 id="推送某个标签到远程"><a href="#推送某个标签到远程" class="header-anchor">#</a> 推送某个标签到远程</h4> <pre><code>$ git push origin &lt;tagname&gt;
+</code></pre> <h4 id="一次性推送全部尚未推送到远程的本地标签"><a href="#一次性推送全部尚未推送到远程的本地标签" class="header-anchor">#</a> 一次性推送全部尚未推送到远程的本地标签</h4> <pre><code>$ git push origin --tags
+</code></pre> <h4 id="删除一个本地标签"><a href="#删除一个本地标签" class="header-anchor">#</a> 删除一个本地标签</h4> <pre><code>$ git tag -d &lt;tagname&gt;
+</code></pre> <h4 id="删除一个远程标签"><a href="#删除一个远程标签" class="header-anchor">#</a> 删除一个远程标签</h4> <pre><code>$ git push origin :refs/tags/&lt;tagname&gt;
+</code></pre></div> <span id="footerPost" data-v-95d4b5b2></span></div> <div id="post-toc" class="post-toc el-col el-col-6" data-v-95d4b5b2><h4 class="catalog-title" data-v-95d4b5b2>TOC</h4> <div class="catalog-body" data-v-95d4b5b2><ul id="catalog-list" class="catalog-list" data-v-95d4b5b2></ul></div></div></div> <div class="post-nav el-row is-justify-space-around el-row--flex" data-v-95d4b5b2><div class="post-prev el-col el-col-7" data-v-95d4b5b2></div> <div class="post-next el-col el-col-7 el-col-lg-pull-5" data-v-95d4b5b2><div data-v-95d4b5b2><a href="/studynotes/posts/less.html" data-v-95d4b5b2>
+          Next
+          <i class="el-icon-arrow-right" data-v-95d4b5b2></i></a> <p class="nav-title" data-v-95d4b5b2>【学习笔记】之less</p></div></div></div> <div class="el-row is-justify-center el-row--flex" data-v-95d4b5b2></div> <span data-v-d999c3f2 data-v-95d4b5b2><button type="button" class="el-button toc-btn el-button--primary is-circle" data-v-d999c3f2><!----><!----><span><i class="iconfont icon-service-directory" data-v-d999c3f2></i></span></button> <button type="button" class="el-button gotop-btn el-button--primary is-circle" data-v-d999c3f2><!----><!----><span><i class="el-icon-arrow-up" data-v-d999c3f2></i></span></button></span></div></main></section> <button type="button" class="el-button gotop-btn el-button--primary is-circle" style="display:none;" data-v-78a2dcfa data-v-80d5f2bc><!----><!----><span><i class="el-icon-arrow-up" data-v-78a2dcfa></i></span></button></section> <footer class="el-footer container-footer" style="height:60px;" data-v-76c50ee3 data-v-80d5f2bc><div class="footer-warp el-row is-justify-center is-align-center el-row--flex footerMargin" data-v-76c50ee3><div class="footer-top el-col el-col-24" data-v-76c50ee3><p class="ellipsis" data-v-76c50ee3><span data-v-76c50ee3>
+          博客内容遵循
+          <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" data-v-76c50ee3>知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span></p></div> <div class="footer-bottom el-col el-col-24" data-v-76c50ee3><p class="ellipsis" data-v-76c50ee3><span data-v-76c50ee3><span data-v-76c50ee3>
+            chen © 2019-10 ~ 2020-08
+          </span></span> <span data-v-76c50ee3>
+          Power by
+          <a href="https://vuepress.vuejs.org/zh/" target="_blank" data-v-76c50ee3>VuePress</a> Theme
+          <a href="https://github.com/zhhlwd/vuepress-theme-indigo-material" target="_blank" data-v-76c50ee3>indigo material</a></span></p></div></div></footer> <div class="overlay" data-v-80d5f2bc></div></div><div class="global-ui"></div></div>
+    <script src="/studynotes/assets/js/app.dacb244d.js" defer></script><script src="/studynotes/assets/js/1.b2a4ee79.js" defer></script><script src="/studynotes/assets/js/14.0b1264cb.js" defer></script><script src="/studynotes/assets/js/5.776f296b.js" defer></script><script src="/studynotes/assets/js/7.f548c11c.js" defer></script><script src="/studynotes/assets/js/9.9124ed9a.js" defer></script><script src="/studynotes/assets/js/6.b7a73979.js" defer></script><script src="/studynotes/assets/js/26.f72c4626.js" defer></script><script src="/studynotes/assets/js/13.420deebf.js" defer></script><script src="/studynotes/assets/js/15.800a8738.js" defer></script>
+  </body>
+</html>
