@@ -18,7 +18,7 @@
 ## 介绍
 study notes是我记录在前端开发中所遇到的问题、学习的笔记等。
 
-具体感受，国内请点击码云的 [博客网站（国内 gitee）](https://chen_project.gitee.io/studynotes)
+具体感受，国内请点击码云的 [博客网站（国内 gitee）](https://chen_project.gitee.io/studynotes)， 国外请点击 [博客网站（国外 github）]( https://chen2114.github.io/studynotes)
 
 ### 使用开发分支
 
