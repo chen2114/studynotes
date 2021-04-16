@@ -336,3 +336,37 @@ handleChange () {
   this.$forceUpdate()
 }
 ```
+## vue多项目配置
+### 安装
+    npm install cross-env
+### 配置
+在`package.json`文件配置变量
+``` js
+"scripts": {
+  "serve": "vue-cli-service serve",
+  "serve:stage": "cross-env VUE_APP_PREFIX=stage vue-cli-service serve"
+  "build": "vue-cli-service build",
+  "build:stage": "cross-env VUE_APP_PREFIX=stage vue-cli-service build",
+  "lint": "vue-cli-service lint"
+},
+```
+自定义一个`cross-env`变量`VUE_APP_PREFIX`，在项目中接收到变量，然后通过变量来区分项目和运行环境，因此需要在`vue.config.js`配置
+``` js
+module.exports = {
+  configureWebpack: {
+    plugins: [
+      new webpack.DefinePlugins({
+        "process.env": {
+          VUE_APP_PREFIX: JSON.stringify(process.env.VUE_APP_PREFIX)
+        }
+      })
+    ]
+  }
+}
+```
+### 使用
+``` js
+if (process.env.VUE_APP_PREFIX === 'stage') {
+  // 执行相应的操作
+}
+```
