@@ -31,45 +31,45 @@ study notes是我记录在前端开发中所遇到的问题、学习的笔记等
 
 ```sh
 |-- develop
-    |-- .babelrc                   // 主题的babel配置, 按需加载element ui所需
-    |-- .gitignore                 // 让git忽略跟踪dist文件夹等等, 不要把docs文件夹加进去
-    |-- deploy.sh                  // 部署到git 远程仓库的shell文件, 要部署时双击即可, 前提是配置的构建目录位置没变
-    |-- init.sh                    // (只要执行一次)克隆develop分支到本地后, 双击它, 一步完成所有操作, 等他完成下载, 开启测试服务器, 打开http://localhost:8080/看到效果
+    |-- .babelrc                   # 主题的babel配置, 按需加载element ui所需
+    |-- .gitignore                 # 让git忽略跟踪dist文件夹等等, 不要把docs文件夹加进去
+    |-- deploy.sh                  # 部署到git 远程仓库的shell文件, 要部署时双击即可, 前提是配置的构建目录位置没变
+    |-- init.sh                    # (只要执行一次)克隆develop分支到本地后, 双击它, 一步完成所有操作, 等他完成下载, 开启测试服务器, 打开http://localhost:8080/看到效果
     |-- package-lock.json
     |-- package.json
     |-- 目录说明.md
-    |-- docs                       // 存放所有开发环境的目录
-        |-- index.md               // 首页,不用改
+    |-- docs                       # 存放所有开发环境的目录
+        |-- index.md               # 首页,不用改
         |-- .vuepress
-        |   |-- config.js          // 主题的配置
-        |   |-- public             // 存放静态文件的目录, 例如img, ico ...
+        |   |-- config.js          # 主题的配置
+        |   |-- public             # 存放静态文件的目录, 例如img, ico ...
         |       |-- avatar.jpg
         |       |-- brand.jpg
         |       |-- favicon.ico
-        |-- about                  // 展示在自我介绍页面的内容
-        |   |-- index.md           // 不能删除, 可以添加内容
-        |-- tags                   // 不能删除, 不能动
-        |   |-- index.md           // 不能删除, 不能动
-        |-- all                    // 不能删除, 不能动
-        |   |-- index.md           // 不能删除, 不能动
-        |-- posts                  // 存放所有文章的目录
-            |-- assets.md          // 资源汇总,存放好用的插件及学习网站 
-            |-- configuration.md   // vue-cli常用项配置
-            |-- css.md             // 常用的css样式
-            |-- deploy.md          // Node+PM2项目部署
-            |-- echart.md          // echart图表使用
-            |-- es6.md             // es6语法
-            |-- git.md             // git使用
-            |-- html.md            // html笔记
-            |-- jQuery.md          // jq常用方法
-            |-- less.md            // less学习笔记
-            |-- markdown.md        // md学习笔记
-            |-- node.md            // node学习笔记
-            |-- scss.md            // scss学习笔记
-            |-- vue.md             // vue难点记录
-            |-- vueRouter.md       // 路由学习笔记
-            |-- vuex.md            // vuex学习笔记
-    |-- vuepress                   // 网站部署
+        |-- about                  # 展示在自我介绍页面的内容
+        |   |-- index.md           # 不能删除, 可以添加内容
+        |-- tags                   # 不能删除, 不能动
+        |   |-- index.md           # 不能删除, 不能动
+        |-- all                    # 不能删除, 不能动
+        |   |-- index.md           # 不能删除, 不能动
+        |-- posts                  # 存放所有文章的目录
+            |-- assets.md          # 资源汇总,存放好用的插件及学习网站 
+            |-- configuration.md   # vue-cli常用项配置
+            |-- css.md             # 常用的css样式
+            |-- deploy.md          # Node+PM2项目部署
+            |-- echart.md          # echart图表使用
+            |-- es6.md             # es6语法
+            |-- git.md             # git使用
+            |-- html.md            # html笔记
+            |-- jQuery.md          # jq常用方法
+            |-- less.md            # less学习笔记
+            |-- markdown.md        # md学习笔记
+            |-- node.md            # node学习笔记
+            |-- scss.md            # scss学习笔记
+            |-- vue.md             # vue难点记录
+            |-- vueRouter.md       # 路由学习笔记
+            |-- vuex.md            # vuex学习笔记
+    |-- vuepress                   # 网站部署
 
 ```
 

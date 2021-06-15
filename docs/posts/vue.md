@@ -310,6 +310,62 @@ export default {
 }
 </script>
 ```
+## 兄弟组件传值
+在main.js注册一个全局bus：
+``` js
+Vue.prototype.bus = new Vue()
+```
+兄弟组件A向组件B传值
+组件A:
+``` vue
+<template>
+  <Button
+    type="primary"
+    @click="sendClick"
+  >
+    点击调用兄弟组件B方法
+  </Button>
+</template>
+<script>
+export default {
+  name: 'A',
+  data {
+    return {
+      aMsg: '兄弟组件A的属性'
+    }
+  },
+  methods: {
+    sendClick () {
+      this.bus.$emit('sendBybus', this.aMsg)
+    }
+  }
+}
+</script>
+```
+组件B:
+``` vue
+<template>
+  {{bMsg}}
+</template>
+<script>
+export default {
+  name: 'B',
+  data {
+    return {
+      bMsg: '兄弟组件B的属性'
+    }
+  },
+  methods: {
+    sendClick () {
+      this.bus.$on('sendBybus', data => {
+        console.log(data)
+        this.bMsg = data
+      })
+    }
+  }
+}
+</script>
+```
 ## DOM的异步更新
 ``` html
 <div>
