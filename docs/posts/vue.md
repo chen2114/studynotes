@@ -323,19 +323,20 @@ Vue.prototype.bus = new Vue()
     type="primary"
     @click="sendClick"
   >
-    点击调用兄弟组件B方法
+    发布
   </Button>
 </template>
 <script>
 export default {
   name: 'A',
-  data {
+  data() {
     return {
       aMsg: '兄弟组件A的属性'
     }
   },
   methods: {
     sendClick () {
+      // 发布
       this.bus.$emit('sendBybus', this.aMsg)
     }
   }
@@ -350,13 +351,14 @@ export default {
 <script>
 export default {
   name: 'B',
-  data {
+  data() {
     return {
       bMsg: '兄弟组件B的属性'
     }
   },
   methods: {
     sendClick () {
+      // 订阅
       this.bus.$on('sendBybus', data => {
         console.log(data)
         this.bMsg = data
