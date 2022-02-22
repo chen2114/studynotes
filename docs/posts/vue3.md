@@ -268,8 +268,8 @@ npm run dev
   }) 
   
   /* 情况三：监视reactive定义的响应式数据
-  			若watch监视的是reactive定义的响应式数据，则无法正确获得oldValue！！
-  			若watch监视的是reactive定义的响应式数据，则强制开启了深度监视 
+     若watch监视的是reactive定义的响应式数据，则无法正确获得oldValue！！
+     若watch监视的是reactive定义的响应式数据，则强制开启了深度监视 
   */
   watch(person,(newValue,oldValue)=>{
   	console.log('person变化了',newValue,oldValue)
@@ -508,18 +508,7 @@ npm run dev
 <div style="width:430px;height:340px;overflow:hidden;float:left">
     <img src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/6cc55165c0e34069a75fe36f8712eb80~tplv-k3u1fbpfcp-watermark.image"style="height:360px"/>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
+<div style="clear: both;"></div>
 
 # 五、新的组件
 
